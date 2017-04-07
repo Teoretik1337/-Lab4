@@ -3,6 +3,7 @@
 
 int main()
 {
+	setlocale(0, "");
 	{
 		Tree tr;
 		int mas[11] = {

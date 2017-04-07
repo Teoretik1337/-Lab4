@@ -15,10 +15,10 @@ public:
 	void AddMas(int *Mas, int count); //добавление массива элементов
 	void Show(); //показать дерево
 	void nodeRoman(); //узлы романского
-	void conditionStart();
+	void conditionStart();//запуск решения по условию
 
-private:
-	class Node
+private:  
+	class Node //узлы
 	{
 	public:
 		Node()
@@ -26,8 +26,8 @@ private:
 			x = NULL;
 			left = NULL;
 			right = NULL;
-			romansk = false;
-			countDes = 0;
+			romansk = false; 
+			countDes = 0;//кол - во поддеревьев
 		}
 		int x;
 		Node *left, *right;
@@ -73,7 +73,7 @@ void Tree::AddMas(int * Mas, int count) // добавить массив элементов
 	}
 }
 
-void Tree::AddHelp(Node *tmpN, Node *node, int value) // штука нужная для добовления элементов (рекурсия)
+void Tree::AddHelp(Node *tmpN, Node *node, int value) // рекурсия для добовления элементов
 {
 	if (value > node->x)
 	{
@@ -101,8 +101,8 @@ void Tree::AddHelp(Node *tmpN, Node *node, int value) // штука нужная для добовл
 
 void Tree::Show() //показать дерево
 {
-	Node *nodeT = _root;
-	print_tree(nodeT, 0);
+	//Node *nodeT = _root;
+	print_tree(_root, 0);
 }
 
 void Tree::print_tree(Node *p, int level) //рекурсивный обход дерева
@@ -204,7 +204,7 @@ void Tree::condition(Node *verNode) //перебераем все узлы для проверки
 
 	if ((quant != verNode->countDes) && !(verNode->romansk) && (quant != -1))
 	{
-		printf("%i - Approaches the condition\n", verNode->x);
+		printf("%i - Не является узлом романского, а все потомки являются\n", verNode->x);
 	}
 
 	if (verNode->left) //перебераем все узлы слева
