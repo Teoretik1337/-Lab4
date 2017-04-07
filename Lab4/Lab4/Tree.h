@@ -101,7 +101,6 @@ void Tree::AddHelp(Node *tmpN, Node *node, int value) // рекурсия для добовления
 
 void Tree::Show() //показать дерево
 {
-	//Node *nodeT = _root;
 	print_tree(_root, 0);
 }
 
