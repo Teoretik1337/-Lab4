@@ -198,8 +198,9 @@ void Tree::condition(Node *verNode) //перебераем все узлы для проверки
 		quant = quant + 1;
 		recCondition(verNode->right, tmpNode, &quant);
 	}
+
 	///////////////////////////////////////////
-	//recCondition(verNode, verNode,&quant);
+
 
 	if ((quant != verNode->countDes) && !(verNode->romansk) && (quant != -1))
 	{
